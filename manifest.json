@@ -1,6 +1,6 @@
 {
   "name": "Udemy Dark Mode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "description": "Apply dark mode to Udemy pages with correct/incorrect highlighting.",
   "permissions": [
