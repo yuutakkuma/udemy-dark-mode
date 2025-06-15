@@ -27,7 +27,9 @@
         el.style.background = darkTransparent;
       }
 
-      if (['p', 'div', 'span', 'svg'].includes(tag)) {
+      if (
+        ['p', 'div', 'span', 'svg', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tag)
+      ) {
         el.style.color = lightText;
       }
 
@@ -55,6 +57,7 @@
       el.style.color = '';
       el.style.fontWeight = '';
     }
+
     document.body.style.backgroundColor = '';
     document.body.style.color = '';
   }
@@ -75,7 +78,7 @@
       } else {
         removeDarkMode();
       }
-    })
+    });
   }
 
   init();
