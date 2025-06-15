@@ -9,6 +9,22 @@
   const highlightGreen = '#4CAF50';
   const highlightRed = '#F44336';
 
+  function injectLabelHoverStyle() {
+  if (document.getElementById('udemy-dark-label-style')) return;
+
+  const style = document.createElement('style');
+  style.id = 'udemy-dark-label-style';
+  style.textContent = `
+    label:hover {
+      opacity: 0.5 !important;
+      background: none !important;
+      background-color: transparent !important;
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+
   function applyDarkMode() {
     const elements = document.querySelectorAll('*');
     for (let i = 0; i < elements.length; i++) {
@@ -46,6 +62,8 @@
 
     document.body.style.backgroundColor = darkBackground;
     document.body.style.color = lightText;
+
+    injectLabelHoverStyle();
   }
 
   function removeDarkMode() {
@@ -60,6 +78,11 @@
 
     document.body.style.backgroundColor = '';
     document.body.style.color = '';
+
+    const styleTag = document.getElementById('udemy-dark-label-style');
+    if (styleTag) {
+      styleTag.remove();
+    }
   }
 
   function init() {
